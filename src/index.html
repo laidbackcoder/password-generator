@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <nav>
+        <img id="hamburger" src="images/menu.svg" alt="hamburger menu">
+        <div id="menu-section">
+            <div id="menu-title">Preferences</div>
+            <div>
+                Password Length: <input type="number" id="password-length-em" value="25" min="8"
+                    onchange="updateLength()">
+            </div>
+            <div>
+                Include Symbols: <input type="checkbox" id="include-symbols-em" value="25"
+                    onchange="updateIncludeSymbols()">
+            </div>
+        </div>
+    </nav>
+    <div id="hero-section">
+        <h1>Generate a <br /><span id="accent-title">strong password</Span></h1>
+        <h2>Never use an insecure password again!</h2>
+        <button id="generate-btn" onclick="generatePassword()">Generate Password</button>
+    </div>
+    <div id="password-em" onclick="copyPasswordToClipboard()"></div>
+    <div id="notification">Copied to Clipboard!</div>
+    <script src="index.js"></script>
+</body>
+
+</html>
