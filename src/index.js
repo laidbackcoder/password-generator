@@ -39,7 +39,7 @@ function copyPasswordToClipboard() {
             setTimeout(() => {
                 notificationEm.style.display = "none";
                 notificationEm.style.animation = "notification-in 1s ease";
-            }, 1000)
+            }, 950)
         }, 4000)
     }
 }
