@@ -134,9 +134,11 @@ h2 {
 @keyframes notification-in {
   0% {
     top: -10%;
+    padding: 0px;
   }
   100% {
     top: 0%;
+    padding: 15px;
   }
 }
 
