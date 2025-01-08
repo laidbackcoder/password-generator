@@ -28,16 +28,17 @@ function generatePassword() {
 
 function copyPasswordToClipboard() {
     let password = document.getElementById("password-em").textContent;
+    let notificationEm = document.getElementById("notification-em");
 
     if (password != "") {
         navigator.clipboard.writeText(password);
-        document.getElementById("notification").style.display = "block";
+        notificationEm.style.display = "block";
 
         setTimeout(() => {
-            document.getElementById("notification").style.animation = "notification-out 1s ease";
+            notificationEm.style.animation = "notification-out 1s ease";
             setTimeout(() => {
-                document.getElementById("notification").style.display = "none";
-                document.getElementById("notification").style.animation = "notification-in 1s ease";
+                notificationEm.style.display = "none";
+                notificationEm.style.animation = "notification-in 1s ease";
             }, 1000)
         }, 4000)
     }
