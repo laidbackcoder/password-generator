@@ -25,6 +25,16 @@ h2 {
   text-shadow: 0px 0px 4px #273549;
 }
 
+button {
+  background-color: #10b981;
+  color: ffffff;
+  border-style: none;
+  border-radius: 6px;
+  text-shadow: 0px 0px 4px #273549;
+  box-shadow: 0px 0px 2px #b1b0b0;
+  cursor: pointer;
+}
+
 #hamburger {
   position: absolute;
   top: 10px;
@@ -82,17 +92,10 @@ h2 {
 }
 
 #generate-btn {
-  background-color: #10b981;
-  color: ffffff;
   padding: 15px 20px;
   margin-top: 50px;
-  border-style: none;
-  border-radius: 6px;
   font-weight: 500;
   font-size: 18px;
-  text-shadow: 0px 0px 4px #273549;
-  box-shadow: 0px 0px 2px #b1b0b0;
-  cursor: pointer;
 }
 
 #password-em {
