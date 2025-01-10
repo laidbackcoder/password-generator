@@ -14,11 +14,17 @@
         <img id="hamburger" src="images/menu.svg" alt="hamburger menu">
         <div id="menu-section">
             <div id="menu-title">Preferences</div>
-            <div>
-                Password Length: <input type="number" id="password-length-em" value="25" min="8"
-                    onchange="updateLength()">
+            <div id="length-section">
+                Password Length:
+                <div id="length-widget">
+                    <p id="password-length-em">25</p>
+                    <div id="length-buttons">
+                        <button id="length_plus" onclick="incrementLength()">+</button>
+                        <button id="length_minus" onclick="decrementLength()">-</button>
+                    </div>
+                </div>
             </div>
-            <div>
+            <div id="include-symbols-section">
                 Include Symbols: <input type="checkbox" id="include-symbols-em" value="25"
                     onchange="updateIncludeSymbols()">
             </div>

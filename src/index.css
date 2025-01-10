@@ -65,14 +65,54 @@ button {
 }
 
 #menu-title {
-  font-size: 18px;
+  font-size: 24px;
   color: #4adf86;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+}
+
+#length-section,
+#include-symbols-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 250px;
+}
+
+#length-widget {
+  display: flex;
+  align-items: center;
 }
 
 #password-length-em {
   width: 50px;
-  height: 20px;
+  line-height: 30px;
+  height: 30px;
+  background-color: #1f2937;
+  border-radius: 6px;
+  font-size: 16px;
+  border-radius: 6px 0px 0px 6px;
+  text-align: center;
+}
+
+#length-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+#length_plus {
+  width: 20px;
+  height: 15px;
+  line-height: 15px;
+  font-size: 14px;
+  border-radius: 0px 6px 0px 0px;
+}
+
+#length_minus {
+  width: 20px;
+  height: 15px;
+  line-height: 15px;
+  font-size: 14px;
+  border-radius: 0px 0px 6px 0px;
 }
 
 #include-symbols-em {

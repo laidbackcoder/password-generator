@@ -4,11 +4,19 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O",
 let numChars = 25;
 let includeSymbols = true;
 
-document.getElementById("password-length-em").value = numChars;
+document.getElementById("password-length-em").textContent = numChars;
 document.getElementById("include-symbols-em").checked = includeSymbols;
 
-function updateLength() {
-    numChars = document.getElementById("password-length-em").value;
+function incrementLength() {
+    numChars++;
+    document.getElementById("password-length-em").textContent = numChars;
+}
+
+function decrementLength() {
+    if (numChars > 8) {
+        numChars--;
+        document.getElementById("password-length-em").textContent = numChars;
+    }
 }
 
 function updateIncludeSymbols() {
