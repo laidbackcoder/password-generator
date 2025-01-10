@@ -7,6 +7,15 @@ let includeSymbols = true;
 document.getElementById("password-length-em").textContent = numChars;
 document.getElementById("include-symbols-em").checked = includeSymbols;
 
+// Handle Scroll Wheel Events on Password Length component
+document.getElementById("length-widget").addEventListener("wheel", event => {
+    if (Math.sign(event.deltaY) < 0) {
+        incrementLength();
+    } else {
+        decrementLength();
+    }
+});
+
 function incrementLength() {
     numChars++;
     document.getElementById("password-length-em").textContent = numChars;
