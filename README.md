@@ -2,7 +2,9 @@
 
 Generate strong Pseudorandom Passwords for better Security
 
-Learn more: https://en.wikipedia.org/wiki/Pseudorandom_number_generator
+![](https://github.com/laidbackcoder/password-generator/blob/main/src/images/demo.gif)
+
+Learn more about Pseudo-randomness: https://en.wikipedia.org/wiki/Pseudorandom_number_generator
 
 ## Getting Started
 
