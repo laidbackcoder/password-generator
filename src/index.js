@@ -32,14 +32,17 @@ function copyPasswordToClipboard() {
 
     if (password != "") {
         navigator.clipboard.writeText(password);
-        notificationEm.style.display = "block";
 
-        setTimeout(() => {
-            notificationEm.style.animation = "notification-out 1s ease";
+        // Display Notification
+        if (notificationEm.style.display != "block") {
+            notificationEm.style.display = "block";
             setTimeout(() => {
-                notificationEm.style.display = "none";
-                notificationEm.style.animation = "notification-in 1s ease";
-            }, 950)
-        }, 4000)
+                notificationEm.style.animation = "notification-out 1s ease";
+                setTimeout(() => {
+                    notificationEm.style.display = "none";
+                    notificationEm.style.animation = "notification-in 1s ease";
+                }, 950)
+            }, 4000)
+       }
     }
 }
