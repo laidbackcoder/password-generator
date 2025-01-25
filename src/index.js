@@ -1,19 +1,15 @@
 const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9","~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?",
 "/"];
-
-let numChars = 25;
-let includeSymbols = true;
+let numChars = localStorage.getItem("numChars");
+let includeSymbols = localStorage.getItem("includeSymbols");
 
 function updatePasswordLengthElement() {
     document.getElementById("password-length").textContent = numChars;
 }
 
-function updateIncludeSymbolsElement() {
-    document.getElementById("include-symbols").checked = includeSymbols;
-}
-
 function incrementLength() {
     numChars++;
+    localStorage.setItem("numChars", numChars);
     updatePasswordLengthElement();
 }
 
@@ -23,14 +19,9 @@ function decrementLength() {
     } else {
         numChars = 8;
     }
-
+    localStorage.setItem("numChars", numChars);
     updatePasswordLengthElement();
 }
-
-// Set initial values
-updatePasswordLengthElement()
-updateIncludeSymbolsElement()
-
 
 // Handle Scroll Wheel Events on Password Length component
 document.getElementById("length-widget").addEventListener("wheel", event => {
@@ -46,6 +37,7 @@ document.getElementById("length_minus").addEventListener("click", decrementLengt
 
 document.getElementById("include-symbols").addEventListener("change", () => {
     includeSymbols = document.getElementById("include-symbols").checked;
+    localStorage.setItem("includeSymbols", includeSymbols);
 })
 
 document.getElementById("generate-btn").addEventListener("click", () => {
@@ -79,3 +71,22 @@ document.getElementById("password").addEventListener("click", () => {
        }
     }
 })
+
+// Handle Local Storage
+if (!numChars) {
+    numChars = 25;
+    localStorage.setItem("numChars", numChars);
+} else {
+    numChars = parseInt(numChars);
+}
+
+if (!includeSymbols) {
+    includeSymbols = true;
+    localStorage.setItem("includeSymbols", includeSymbols);
+} else {
+    includeSymbols = (includeSymbols === "true")
+}
+
+// Update UI with Initial Values
+updatePasswordLengthElement();
+document.getElementById("include-symbols").checked = includeSymbols;
