@@ -4,8 +4,33 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O",
 let numChars = 25;
 let includeSymbols = true;
 
-document.getElementById("password-length").textContent = numChars;
-document.getElementById("include-symbols").checked = includeSymbols;
+function updatePasswordLengthElement() {
+    document.getElementById("password-length").textContent = numChars;
+}
+
+function updateIncludeSymbolsElement() {
+    document.getElementById("include-symbols").checked = includeSymbols;
+}
+
+function incrementLength() {
+    numChars++;
+    updatePasswordLengthElement();
+}
+
+function decrementLength() {
+    if (numChars > 8) {
+        numChars--;
+    } else {
+        numChars = 8;
+    }
+
+    updatePasswordLengthElement();
+}
+
+// Set initial values
+updatePasswordLengthElement()
+updateIncludeSymbolsElement()
+
 
 // Handle Scroll Wheel Events on Password Length component
 document.getElementById("length-widget").addEventListener("wheel", event => {
@@ -16,23 +41,14 @@ document.getElementById("length-widget").addEventListener("wheel", event => {
     }
 });
 
-function incrementLength() {
-    numChars++;
-    document.getElementById("password-length").textContent = numChars;
-}
+document.getElementById("length_plus").addEventListener("click", incrementLength);
+document.getElementById("length_minus").addEventListener("click", decrementLength);
 
-function decrementLength() {
-    if (numChars > 8) {
-        numChars--;
-        document.getElementById("password-length").textContent = numChars;
-    }
-}
-
-function updateIncludeSymbols() {
+document.getElementById("include-symbols").addEventListener("change", () => {
     includeSymbols = document.getElementById("include-symbols").checked;
-}
+})
 
-function generatePassword() {
+document.getElementById("generate-btn").addEventListener("click", () => {
     let maxCharacterPosition = includeSymbols ? characters.length : characters.length - 30;
     let password = "";
 
@@ -41,9 +57,9 @@ function generatePassword() {
     }
 
     document.getElementById("password").textContent = password;
-}
+})
 
-function copyPasswordToClipboard() {
+document.getElementById("password").addEventListener("click", () => {
     let password = document.getElementById("password").textContent;
     let notification = document.getElementById("notification");
 
@@ -62,4 +78,4 @@ function copyPasswordToClipboard() {
             }, 4000)
        }
     }
-}
+})

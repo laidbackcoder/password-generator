@@ -21,23 +21,22 @@
                 <div id="length-widget">
                     <p id="password-length">25</p>
                     <div id="length-buttons">
-                        <button id="length_plus" onclick="incrementLength()">+</button>
-                        <button id="length_minus" onclick="decrementLength()">-</button>
+                        <button id="length_plus">+</button>
+                        <button id="length_minus">-</button>
                     </div>
                 </div>
             </div>
             <div id="include-symbols-section">
-                Include Symbols: <input type="checkbox" id="include-symbols" class="switch-checkbox"
-                    onchange="updateIncludeSymbols()">
+                Include Symbols: <input type="checkbox" id="include-symbols" class="switch-checkbox">
             </div>
         </div>
     </nav>
     <div id="hero-section">
         <h1>Generate a <br /><span id="accent-title">strong password</Span></h1>
         <h2>Never use an insecure password again!</h2>
-        <button id="generate-btn" onclick="generatePassword()">Generate Password</button>
+        <button id="generate-btn">Generate Password</button>
     </div>
-    <div id="password" onclick="copyPasswordToClipboard()"></div>
+    <div id="password"></div>
     <div id="notification">Copied to Clipboard!</div>
     <script src="index.js"></script>
 </body>
