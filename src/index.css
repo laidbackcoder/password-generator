@@ -112,7 +112,7 @@ button {
   align-items: center;
 }
 
-#password-length-em {
+#password-length {
   width: 50px;
   line-height: 30px;
   height: 30px;
@@ -162,7 +162,7 @@ button {
   font-size: 18px;
 }
 
-#password-em {
+#password {
   background-color: #273549;
   width: 100%;
   min-height: 45px;
@@ -177,11 +177,11 @@ button {
   cursor: pointer;
 }
 
-#password-em:hover {
+#password:hover {
   border-bottom-color: #10b981;
 }
 
-#notification-em {
+#notification {
   color: #1f2937;
   background-color: #d5d4d8;
   border-left: solid 5px #10b981;

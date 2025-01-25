@@ -4,8 +4,8 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O",
 let numChars = 25;
 let includeSymbols = true;
 
-document.getElementById("password-length-em").textContent = numChars;
-document.getElementById("include-symbols-em").checked = includeSymbols;
+document.getElementById("password-length").textContent = numChars;
+document.getElementById("include-symbols").checked = includeSymbols;
 
 // Handle Scroll Wheel Events on Password Length component
 document.getElementById("length-widget").addEventListener("wheel", event => {
@@ -18,18 +18,18 @@ document.getElementById("length-widget").addEventListener("wheel", event => {
 
 function incrementLength() {
     numChars++;
-    document.getElementById("password-length-em").textContent = numChars;
+    document.getElementById("password-length").textContent = numChars;
 }
 
 function decrementLength() {
     if (numChars > 8) {
         numChars--;
-        document.getElementById("password-length-em").textContent = numChars;
+        document.getElementById("password-length").textContent = numChars;
     }
 }
 
 function updateIncludeSymbols() {
-    includeSymbols = document.getElementById("include-symbols-em").checked;
+    includeSymbols = document.getElementById("include-symbols").checked;
 }
 
 function generatePassword() {
@@ -40,24 +40,24 @@ function generatePassword() {
         password += characters[Math.floor(Math.random() * maxCharacterPosition)];
     }
 
-    document.getElementById("password-em").textContent = password;
+    document.getElementById("password").textContent = password;
 }
 
 function copyPasswordToClipboard() {
-    let password = document.getElementById("password-em").textContent;
-    let notificationEm = document.getElementById("notification-em");
+    let password = document.getElementById("password").textContent;
+    let notification = document.getElementById("notification");
 
     if (password != "") {
         navigator.clipboard.writeText(password);
 
         // Display Notification
-        if (notificationEm.style.display != "block") {
-            notificationEm.style.display = "block";
+        if (notification.style.display != "block") {
+            notification.style.display = "block";
             setTimeout(() => {
-                notificationEm.style.animation = "notification-out 1s ease";
+                notification.style.animation = "notification-out 1s ease";
                 setTimeout(() => {
-                    notificationEm.style.display = "none";
-                    notificationEm.style.animation = "notification-in 1s ease";
+                    notification.style.display = "none";
+                    notification.style.animation = "notification-in 1s ease";
                 }, 950)
             }, 4000)
        }
