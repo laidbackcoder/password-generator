@@ -164,6 +164,7 @@ button {
 }
 
 #password {
+  margin-bottom: 15px;
   background-color: #273549;
   width: 100%;
   min-height: 45px;
@@ -219,5 +220,22 @@ button {
   }
   100% {
     top: -10%;
+  }
+}
+
+@media only screen and (max-width: 840px) {
+  body {
+    margin: 0px 20px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #notification {
+    left: 5%;
+    right: 5%;
+  }
+
+  #hamburger {
+    width: 50px;
   }
 }
