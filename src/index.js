@@ -1,26 +1,28 @@
 const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9","~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?",
 "/"];
+const minLength = 8;
+
 let numChars = localStorage.getItem("numChars");
 let includeSymbols = localStorage.getItem("includeSymbols");
 
-function updatePasswordLengthElement() {
-    document.getElementById("password-length").textContent = numChars;
+function updatePasswordLength() {
+    if (numChars < minLength) {
+        numChars = minLength;
+    }
+    document.getElementById("password-length").value = numChars;
+    localStorage.setItem("numChars", numChars);
 }
 
 function incrementLength() {
     numChars++;
-    localStorage.setItem("numChars", numChars);
-    updatePasswordLengthElement();
+    updatePasswordLength();
 }
 
 function decrementLength() {
-    if (numChars > 8) {
+    if (numChars > minLength) {
         numChars--;
-    } else {
-        numChars = 8;
     }
-    localStorage.setItem("numChars", numChars);
-    updatePasswordLengthElement();
+    updatePasswordLength();
 }
 
 // Handle Scroll Wheel Events on Password Length component
@@ -32,6 +34,10 @@ document.getElementById("length-widget").addEventListener("wheel", event => {
     }
 });
 
+document.getElementById("password-length").addEventListener("change", () => {
+    numChars = document.getElementById("password-length").value;
+    updatePasswordLength();
+})
 document.getElementById("length_plus").addEventListener("click", incrementLength);
 document.getElementById("length_minus").addEventListener("click", decrementLength);
 
@@ -88,5 +94,5 @@ if (!includeSymbols) {
 }
 
 // Update UI with Initial Values
-updatePasswordLengthElement();
+updatePasswordLength();
 document.getElementById("include-symbols").checked = includeSymbols;

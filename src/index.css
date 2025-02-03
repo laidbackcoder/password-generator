@@ -98,6 +98,7 @@ button {
   font-size: 24px;
   color: #4adf86;
   margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 
 #length-section,
@@ -106,6 +107,7 @@ button {
   align-items: center;
   justify-content: space-between;
   width: 250px;
+  margin-bottom: 10px;
 }
 
 #length-widget {
@@ -115,13 +117,15 @@ button {
 
 #password-length {
   width: 50px;
-  line-height: 30px;
   height: 30px;
   background-color: #1f2937;
   border-radius: 6px;
   font-size: 16px;
   border-radius: 6px 0px 0px 6px;
   text-align: center;
+  color: white;
+  outline: none;
+  border: none;
 }
 
 #length-buttons {
@@ -198,6 +202,12 @@ button {
   margin-inline: auto;
   display: none;
   animation: notification-in 1s ease;
+}
+
+/* Remove default arrow buttons */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 
 @keyframes notification-in {
